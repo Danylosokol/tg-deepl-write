@@ -17,7 +17,7 @@ const useDeepl = async (text: string): Promise<string> => {
 		);
 		await page.waitForSelector(
 			"#panelTranslateText > div > div.lmt__sides_wrapper > section.lmt__side_container.lmt__side_container--target > div.lmt__textarea_container.lmt__raise_alternatives_placement > div.lmt__inner_textarea_container > d-textarea",
-			{ timeout: 10000 },
+			{ timeout: 100000 },
 		);
 		result = await page.$eval(
 			"#panelTranslateText > div > div.lmt__sides_wrapper > section.lmt__side_container.lmt__side_container--target > div.lmt__textarea_container.lmt__raise_alternatives_placement > div.lmt__inner_textarea_container > d-textarea",
