@@ -64,10 +64,6 @@ export async function useWebhook(req: NowRequest, res: NowResponse) {
 		// call bot commands and middlware
 		botUtils();
 
-		// console.log("webhook already defined");
-		// console.log("request method: ", req.method);
-		// console.log("req.body", req.body);
-
 		if (req.method === "POST") {
 			await bot.handleUpdate(req.body, res);
 		} else {
