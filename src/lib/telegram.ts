@@ -1,7 +1,7 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 import Telegraf, { Context as TelegrafContext, Extra } from "telegraf";
 import { ExtraReplyMessage } from "telegraf/typings/telegram-types";
-import { about, greeting } from "..";
+import { about, deepl } from "..";
 import { ok } from "./responses";
 
 const debug = require("debug")("lib:telegram");
@@ -14,15 +14,15 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 
 export const bot = new Telegraf(BOT_TOKEN);
 
-function botUtils() {
+async function botUtils() {
 	bot.use(Telegraf.log());
 	bot.use(logger);
 
 	bot.start(ctx => {
-		return ctx.reply("This is a test bot.");
+		return ctx.reply("This is a unofficial bot for DeepL Write service. The project was created for personal use only!");
 	});
 
-	bot.command("about", about()).on("text", greeting());
+	bot.command("about", about()).on("text", await deepl());
 }
 
 async function localBot() {

@@ -1,15 +1,16 @@
 {
-	"name": "telegram-bot-boilerplate-now-serverless-api",
+	"name": "Bot that allows you to use the DeepL Write",
 	"version": "2.0.0",
-	"description": "A template for building Telegram bots with Telegraf.js Vercel's Serverless Functions",
+	"description": "",
 	"main": "api/index.ts",
-	"author": "Stephane Mensah",
-	"homepage": "https://github.com/waptik/telegram-bot-boilerplate-now-serverless-api.git",
+	"author": "Danylo Sokol",
+	"homepage": "https://www.danylosokol.dev",
 	"scripts": {
 		"dev": "dotenv -- nodemon -e ts -x ts-node src/lib/telegram.ts",
 		"prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'"
 	},
 	"dependencies": {
+		"puppeteer": "^21.1.1",
 		"telegraf": "^3.38.0"
 	},
 	"devDependencies": {
