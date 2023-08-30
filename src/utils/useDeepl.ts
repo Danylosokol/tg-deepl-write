@@ -30,6 +30,7 @@ const useDeepl = async (text: string): Promise<string> => {
 		console.error("Error:", error);
     result = `Error: ${error}`;
 	} finally {
+    console.log("closing browser...");
 		await browser.close();
     return result;
 	}
