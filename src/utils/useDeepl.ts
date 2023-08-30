@@ -1,7 +1,16 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
+const chrome = require("chrome-aws-lambda");
 
 const useDeepl = async (text: string): Promise<string> => {
-	const browser = await puppeteer.launch({ headless: "new" });
+  const options =
+		process.env.DEV === "false"
+			? {
+					args: chrome.args,
+					executablePath: await chrome.executablePath,
+					headless: chrome.headless,
+			  }
+			: { executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" };
+	const browser = await puppeteer.launch(options);
 	const page = await browser.newPage();
   let result: string = "";
 	try {

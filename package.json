@@ -10,7 +10,8 @@
 		"prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'"
 	},
 	"dependencies": {
-		"puppeteer": "^21.1.1",
+		"chrome-aws-lambda": "^10.1.0",
+		"puppeteer-core": "^21.1.1",
 		"telegraf": "^3.38.0"
 	},
 	"devDependencies": {
