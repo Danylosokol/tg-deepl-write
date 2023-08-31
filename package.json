@@ -7,10 +7,11 @@
 	"homepage": "https://www.danylosokol.dev",
 	"scripts": {
 		"dev": "dotenv -- nodemon -e ts -x ts-node src/lib/telegram.ts",
-		"prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'"
+		"prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'",
+		"build": "dotenv -- nodemon -e ts -x ts-node src/lib/telegram.ts"
 	},
 	"dependencies": {
-		"puppeteer-core": "^21.1.1",
+		"puppeteer": "^21.1.1",
 		"telegraf": "^3.38.0"
 	},
 	"devDependencies": {

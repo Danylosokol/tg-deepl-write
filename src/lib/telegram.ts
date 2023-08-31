@@ -49,6 +49,8 @@ export async function useWebhook(req: NowRequest, res: NowResponse) {
 		}
 
 		const getWebhookInfo = await bot.telegram.getWebhookInfo();
+    console.log("Web hook info:");
+    console.log(getWebhookInfo);
 
 		const botInfo = await bot.telegram.getMe();
 		bot.options.username = botInfo.username;

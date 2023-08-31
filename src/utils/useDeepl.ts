@@ -1,9 +1,7 @@
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 
 const useDeepl = async (text: string): Promise<string> => {
-  const browser = await puppeteer.connect({
-		browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BROWSELESS}`,
-	});
+  const browser = await puppeteer.launch({headless: "new"});
 	const page = await browser.newPage();
   let result: string = "";
 	try {
